@@ -9,19 +9,30 @@ class App extends Component {
     super(props);
 
     this.state = {
-      
     };
   }
 
-  onChangeSearch = () => {
+  onChangeSearch = (e) => {
+    this.value = e.target.value;
 
+    this.url = `https://www.omdbapi.com/?i=tt3896198&apikey=8523cbb8&s=${this.value}&page=1`;
   }
 
   submitSearch = (e) => {
     e.preventDefault();
+    this.destructor()
   }
 
-  async destructor() { }
+  async destructor() {
+    const responceInfo = await fetch(this.url);
+    const data = await responceInfo.json();
+
+    this.setState(() => {
+      return {
+        data: data,
+      }
+    })
+  }
 
   render() {
     console.log(this.state)
