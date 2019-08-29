@@ -25,6 +25,8 @@ const Header = ({
           </Col>
           <Col
             xl={7}
+            md={6}
+            xs={5}
           >
             <Form.Control
               id="form"
@@ -36,6 +38,8 @@ const Header = ({
           </Col>
           <Col
             xl={1}
+            md={2}
+            xs={3}
           >
             <Button
               variant="outline-light"
@@ -60,7 +64,7 @@ const Header = ({
           )}
           {(login) && (
             <Col xs={2}>
-              <h4 className='text-light'>{nickName}</h4>
+              <h3>{nickName}</h3>
             </Col>
           )}
         </Row>

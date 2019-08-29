@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, Row, Col, Image, Pagination } from 'react-bootstrap';
 import uniqid from 'uniqid';
 
+import './main.css';
+
 const Main = ({ data, value,  changePagePrev, changePageNext, page }) => {
   const totalResults = data.totalResults;
   const stringResults = `You serched for: ${value}, ${totalResults} results found`;
