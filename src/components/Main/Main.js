@@ -1,8 +1,18 @@
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
-const Main = () => {
+const Main = ({ data, value }) => {
+  const totalResults = data.totalResults;
+  const stringResults = `You serched for: ${value}, ${totalResults} results found`;
+
   return (
-    <h1>Main</h1>
+    <Container>
+      <Row>
+        <Col>
+          <h3>{stringResults}</h3>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

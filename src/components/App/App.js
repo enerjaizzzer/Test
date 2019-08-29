@@ -51,7 +51,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <>
         <Header
@@ -62,7 +61,12 @@ class App extends Component {
           login={this.state.login}
           nickName={this.state.nickName}
         />
-        <Main />
+        {(this.state.data) && (
+          <Main
+            data={this.state.data}
+            value={this.value}
+          />
+        )}
         <Footer />
       </>
     );
