@@ -1,8 +1,15 @@
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const Footer = () => {
   return (
-    <h1>Footer</h1>
+    <Container className="fixed-bottom bg-dark" fluid>
+      <Row>
+        <Col>
+          <h4 className="text-light">by enerjaizzzer </h4>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

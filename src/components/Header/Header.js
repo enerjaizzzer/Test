@@ -21,7 +21,7 @@ const Header = ({
       >
         <Row>
           <Col xs={2}>
-            <Navbar.Brand href="#home" className="text-light logo">Movie Catalog</Navbar.Brand>
+            <Navbar.Brand href="#home" className="text-light">Movie Catalog</Navbar.Brand>
           </Col>
           <Col
             xl={7}
@@ -60,7 +60,7 @@ const Header = ({
           )}
           {(login) && (
             <Col xs={2}>
-              <h3>{nickName}</h3>
+              <h4 className='text-light'>{nickName}</h4>
             </Col>
           )}
         </Row>
