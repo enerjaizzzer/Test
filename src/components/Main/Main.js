@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col, Image, Pagination } from 'react-bootstrap';
 import uniqid from 'uniqid';
 
-const Main = ({ data, value }) => {
+const Main = ({ data, value,  changePagePrev, changePageNext, page }) => {
   const totalResults = data.totalResults;
   const stringResults = `You serched for: ${value}, ${totalResults} results found`;
 
@@ -39,6 +39,15 @@ const Main = ({ data, value }) => {
       </Row>
       <Row>
         {renderElement}
+      </Row>
+      <Row>
+        <Col className='pagination'>
+          <Pagination className="bg-dark">
+            <Pagination.Prev onClick={changePagePrev} />
+            <Pagination.Item active>{page}</Pagination.Item>
+            <Pagination.Next onClick={changePageNext} />
+          </Pagination>
+        </Col>
       </Row>
     </Container>
   );

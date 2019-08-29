@@ -50,6 +50,26 @@ class App extends Component {
     })
   }
 
+  changePagePrev = () => {
+    this.page = this.state.page - 1;
+    this.renderAfterChangePage()
+  }
+
+  changePageNext = () => {
+    this.page = this.state.page + 1;
+    this.renderAfterChangePage()
+  }
+
+  renderAfterChangePage = () => {
+    this.url = `https://www.omdbapi.com/?i=tt3896198&apikey=8523cbb8&s=${this.value}&page=${this.page}`
+    this.setState(() => {
+      return {
+        page: this.page,
+      }
+    })
+    this.destructor()
+  }
+
   render() {
     return (
       <>
@@ -65,6 +85,9 @@ class App extends Component {
           <Main
             data={this.state.data}
             value={this.value}
+            changePagePrev={this.changePagePrev}
+            changePageNext={this.changePageNext}
+            page={this.state.page}
           />
         )}
         <Footer />
