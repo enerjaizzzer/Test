@@ -9,6 +9,9 @@ class App extends Component {
     super(props);
 
     this.state = {
+      login: false,
+      nickName: '',
+      page: 1,
     };
   }
 
@@ -34,6 +37,19 @@ class App extends Component {
     })
   }
 
+  onChangeLogin = (e) => {
+    this.nickName = e.target.value;
+  }
+
+  submitLogin = () => {
+    this.setState(() => {
+      return {
+        login: true,
+        nickName: this.nickName,
+      }
+    })
+  }
+
   render() {
     console.log(this.state)
     return (
@@ -41,6 +57,10 @@ class App extends Component {
         <Header
           onChangeSearch={this.onChangeSearch}
           submitSearch={this.submitSearch}
+          onChangeLogin={this.onChangeLogin}
+          submitLogin={this.submitLogin}
+          login={this.state.login}
+          nickName={this.state.nickName}
         />
         <Main />
         <Footer />
